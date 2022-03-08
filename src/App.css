@@ -98,3 +98,9 @@ input[type="radio"] {
   margin-top: 15px;
   border-right: 4px solid green;
 }
+input.search {
+  display: block;
+  background-color: #efefef;
+  width: 100%;
+  margin: 20px 0;
+}
