@@ -3,7 +3,7 @@ import { useState } from "react";
 const TransActionForm = ({ addTransaction, setIsShow }) => {
   const [formValuse, setFormValues] = useState({
     type: "expense",
-    amount: null,
+    amount: "",
     desc: "",
   });
 
@@ -20,6 +20,7 @@ const TransActionForm = ({ addTransaction, setIsShow }) => {
   return (
     <form onSubmit={submitHandler}>
       <input
+        required
         type="text"
         name="desc"
         onChange={changeHandler}
@@ -27,6 +28,7 @@ const TransActionForm = ({ addTransaction, setIsShow }) => {
         placeholder="description"
       />
       <input
+        required
         type="number"
         name="amount"
         onChange={changeHandler}
