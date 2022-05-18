@@ -1,6 +1,19 @@
+:root {
+  --background: #f8fafc;
+  --text-color: #1e293b;
+  --card-color: #e2e8f0;
+  --color-primary: #6d28d9;
+}
+[data-theme="dark"] {
+  --background: #1e293b;
+  --text-color: #f8fafc;
+  --card-color: #334155;
+  --color-primary: #6d28d9;
+}
+
 .App {
-  background-color: #f6f6f6;
-  color: #0d1d2c;
+  background-color: var(--background);
+  color: var(--text-color);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,15 +21,62 @@
   width: 100%;
   padding-top: 30px;
   font-family: Montserrat;
+  transition: all ease-in-out 0.3s;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+.toggle{
+  display: flex;
+  align-items: center;
+}
+.toggle input {
+  opacity: 0;
+  position: absolute;
+}
+.toggle-theme {
+  background-color: var(--card-color);
+  border-radius: 50px;
+  height: 26px;
+  width: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px;
+  position: relative;
+  transform: scale(1.5);
+}
+.toggle-theme .ball {
+  background-color: var(--background);
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  height: 22px;
+  width: 22px;
+  transform: translateX(0px);
+  transition: transform 0.2s linear;
+}
+.toggle input:checked + .toggle-theme .ball {
+  transform: translateX(24px);
+}
+.togglerIcon {
+  width: 20px;
+  height: 20px;
 }
 .container {
   display: flex;
   flex-direction: column;
   width: 300px;
-  background-color: #fff;
+  background-color: var(--card-color);
   padding: 10px;
   border-radius: 5px;
-  border: 1px solid #ccc;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
 }
 .topSection {
   display: flex;
@@ -38,30 +98,27 @@
   padding: 5px 10px;
   width: 135px;
   border-radius: 5px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--text-color);
 }
 .expenseBox span {
   font-weight: bold;
-  color: green;
+  color: #10b981;
 }
 .btn {
+  color: #f8fafc;
   outline: none;
   padding: 5px 10px;
-  background-color: #ede9fe;
-  color: #6d28d9;
+  background-color: var(--color-primary);
   border-radius: 5px;
-  border: 1px solid #6d28d9;
+  border: 1px solid var(--text-color);
 }
 .primary {
-  color: #fff;
-  background-color: #6d28d9;
-  border: none;
+  background-color: var(--color-primary);
   padding: 8px 10px;
 }
 .cancel {
-  background-color: #fff;
-  color: #dc2626;
-  border: 1px solid #dc2626;
+  color: var(--text-color);
+  background-color: #f87171;
 }
 form {
   display: flex;
@@ -74,7 +131,10 @@ input {
   outline: none;
   padding: 10px 12px;
   border-radius: 5px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--text-color);
+  background-color: transparent;
+  color: var(--text-color);
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
 }
 input[type="radio"] {
   margin-left: 20px;
@@ -92,15 +152,15 @@ input[type="radio"] {
   display: flex;
   justify-content: space-between;
   border-radius: 5px;
-  background: #f4f4f5;
+  color: var(--text-color);
+  background: var(--background);
   font-weight: bold;
   padding: 10px;
   margin-top: 15px;
-  border-right: 4px solid green;
+  border-right: 4px solid #10b981;
 }
 input.search {
   display: block;
-  background-color: #efefef;
   width: 100%;
   margin: 20px 0;
 }
