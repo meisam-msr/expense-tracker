@@ -40,7 +40,7 @@ const TransAction = ({ transactions }) => {
             <div
               key={t.id}
               className="transaction"
-              style={{ borderRight: t.type === "expense" && "4px solid red" }}
+              style={{ borderRight: t.type === "expense" && "4px solid #f87171" }}
             >
               <span>{t.desc}</span>
               <span>$ {t.amount}</span>

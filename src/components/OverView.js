@@ -23,7 +23,7 @@ const OverView = ({ income, expense, addTransaction }) => {
       )}
       <div className="resultSection">
         <div className="expenseBox">
-          Expense <span style={{ color: "red" }}>{expense} $</span>
+          Expense <span style={{ color: "#f87171" }}>{expense} $</span>
         </div>
         <div className="expenseBox">
           Income <span>{income} $</span>
